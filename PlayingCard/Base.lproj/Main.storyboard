@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +20,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-aI-phZ" customClass="PlayingCardView">
-                                <rect key="frame" x="16" y="39" width="343" height="734"/>
+                                <rect key="frame" x="16.333333333333343" y="137" width="342.66666666666663" height="548"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="800" id="Bmd-Bb-j4V"/>
+                                    <constraint firstAttribute="width" secondItem="bCZ-aI-phZ" secondAttribute="height" multiplier="5:8" id="ofJ-C0-BVV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.85906391770000001" blue="0.57026499230000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bCZ-aI-phZ" secondAttribute="bottom" constant="5" id="IKe-rz-R6Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bCZ-aI-phZ" secondAttribute="trailing" constant="16" id="NTd-q9-Ryq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="bCZ-aI-phZ" secondAttribute="top" constant="5" id="PsX-qf-0mZ"/>
-                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vTQ-yO-ANm"/>
+                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="C40-zV-0KU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bCZ-aI-phZ" secondAttribute="trailing" constant="16" id="DqA-H3-SKz"/>
+                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Y5R-6l-bPB"/>
+                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="cgA-gY-32S"/>
+                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fFm-xk-Ylt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bCZ-aI-phZ" secondAttribute="bottom" constant="16" id="yZP-Sa-s6z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
