@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-aI-phZ" customClass="PlayingCardView" customModule="PlayingCard" customModuleProvider="target">
-                                <rect key="frame" x="25" y="44" width="343" height="734"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-aI-phZ" customClass="PlayingCardView">
+                                <rect key="frame" x="16" y="39" width="343" height="734"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.85906391770000001" blue="0.57026499230000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bCZ-aI-phZ" secondAttribute="bottom" id="LC6-uw-c4s"/>
-                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QJU-B1-6te"/>
-                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Uwq-W4-acN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bCZ-aI-phZ" secondAttribute="trailing" constant="16" id="aoz-Nu-ib1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bCZ-aI-phZ" secondAttribute="bottom" constant="5" id="IKe-rz-R6Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bCZ-aI-phZ" secondAttribute="trailing" constant="16" id="NTd-q9-Ryq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="bCZ-aI-phZ" secondAttribute="top" constant="5" id="PsX-qf-0mZ"/>
+                            <constraint firstItem="bCZ-aI-phZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vTQ-yO-ANm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
