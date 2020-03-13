@@ -4,7 +4,7 @@
 //
 //  Created by Mittie Adan on 11/03/2020.
 //  Copyright © 2020 Mittie Adan. All rights reserved.
-//
+//❤️♠️♣️♦️
 
 import UIKit
 
@@ -21,9 +21,15 @@ class PlayingCardView: UIView {
         
         return label
     }
-    @IBInspectable var rank: Int = 5 { didSet {setNeedsDisplay(); setNeedsLayout()}}
-    @IBInspectable var suit: String = "❤️" { didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable var rank: Int = 8 { didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable var suit: String = "♣️" { didSet {setNeedsDisplay(); setNeedsLayout()}}
     @IBInspectable var isFaceUp: Bool = true { didSet {setNeedsDisplay(); setNeedsLayout()}}
+    
+    var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     private var cornerString: NSAttributedString {
         return centerdAttributedString(rankString + "\n" + suit, fontSize: cornerFontSize)
@@ -93,6 +99,16 @@ class PlayingCardView: UIView {
         lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX, y: bounds.maxY).offsetBy(dx: -cornerOffset, dy: -cornerOffset).offsetBy(dx: -lowerRightCornerLabel.frame.size.width, dy: -lowerRightCornerLabel.frame.size.height)
     }
     
+    @objc func adjustFaceardScale(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            faceCardScale *= recognizer.scale
+            recognizer.scale = 1.0
+        default:
+            break
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
 
             let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
@@ -101,7 +117,7 @@ class PlayingCardView: UIView {
             roundedRect.fill()
         if isFaceUp {
             if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
-                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+                faceCardImage.draw(in: bounds.zoom(by: faceCardScale))
             } else {
                 drawPips()
             }

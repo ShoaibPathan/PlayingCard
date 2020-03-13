@@ -22,10 +22,14 @@
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-aI-phZ" customClass="PlayingCardView">
                                 <rect key="frame" x="16.333333333333343" y="137" width="342.66666666666663" height="548"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="800" id="Bmd-Bb-j4V"/>
                                     <constraint firstAttribute="width" secondItem="bCZ-aI-phZ" secondAttribute="height" multiplier="5:8" id="ofJ-C0-BVV"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1Le-KS-QZj" appends="YES" id="K4E-hA-ybB"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.85906391770000001" blue="0.57026499230000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -39,8 +43,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playingCardView" destination="bCZ-aI-phZ" id="pgQ-dj-HkT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1Le-KS-QZj">
+                    <connections>
+                        <action selector="flipCard:" destination="BYZ-38-t0r" id="xN9-LN-9Hu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="117.48768472906404"/>
         </scene>
